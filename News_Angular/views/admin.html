@@ -1,0 +1,12 @@
+    <ul>
+      <li ng-repeat="message in messages | orderBy:reverse">
+        <!-- exit a message -->
+        <input ng-model="message.title" ng-change="messages.$save(message)" />
+        <input ng-model="message.author" ng-change="messages.$save(message)" />
+        <input ng-model="message.date" ng-change="messages.$save(message)" />
+        <input ng-model="message.text" ng-change="messages.$save(message)" />
+        <!-- delete message -->
+        <button ng-click="messages.$remove(message)">X</button>
+      </li>
+    </ul>
+    

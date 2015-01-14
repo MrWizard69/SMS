@@ -1,0 +1,16 @@
+
+  	<a href="#/add">Add Article</a>
+  	<a href="#/admin">Edit Articles</a>
+    <ul>
+      <li ng-repeat="message in messages | orderBy:reverse">
+        <!-- exit a message -->
+        <h1>{{message.title}}</h1>
+        <h3>{{message.author}}</h3>
+        <h5>{{message.date | date : 'shortDate'}} </h5>
+        <p>{{message.text}}</p>
+        <!-- delete message -->
+        <!--<button ng-click="messages.$remove(message)">X</button>-->
+      </li>
+    </ul>
+    
+  
