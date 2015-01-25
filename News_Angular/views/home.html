@@ -1,16 +1,69 @@
 
-  	<a href="#/add">Add Article</a>
-  	<a href="#/admin">Edit Articles</a>
-    <ul>
-      <li ng-repeat="message in messages | orderBy:reverse">
-        <!-- exit a message -->
-        <h1>{{message.title}}</h1>
-        <h3>{{message.author}}</h3>
-        <h5>{{message.date | date : 'shortDate'}} </h5>
-        <p>{{message.text}}</p>
-        <!-- delete message -->
-        <!--<button ng-click="messages.$remove(message)">X</button>-->
-      </li>
-    </ul>
+  	<!-- Page Content -->
+    <div class="container">
+    	
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8"> 
+
+                <h1 class="page-header">
+                    News Angular
+                    <small>Write News Right Now</small>
+                </h1>
+                <img ng-src="{{currentUser.facebook.cachedUserProfile.picture.data.url}}" alt="user pic yo"/>
+                
+                <pre> {{ currentUser.facebook.cachedUserProfile |json }}</pre>
+
+                <!-- First Blog Post -->
+            <ol ng-repeat="message in messages | orderBy:reverse | filter:searchArc">
+      			<li>
+                <h2>
+                    {{message.title}}
+                </h2>
+                <p class="lead">
+                    by {{message.author}}
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on {{message.date | date : 'shortDate'}}</p>
+                <hr>
+                	Article:</br>
+                <p>{{message.text}}</p>
+                <hr>
+                	Tags:</br>
+                	<a href="#">{{message.tag1}}</a> <a href="#/">{{message.tag2}}</a> <a href="#">{{message.tag3}}</a>
+                <!--<a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>-->
+            
+                <hr>
+            	</li>
+    		</ol>
+            </div>
+
+            <!-- Blog Search Well -->
+                <div class="well" id="well1">
+                    <h4>Article Search</h4>
+                    <h6>Search tags, titles, authors and content</h6>
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="searchArc">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+
+
+                <!-- Side Widget Well -->
+                <div class="well" id="well3">
+                    <h4>Current News</h4>
+                    	<a href="#" id="article_a">article</a> <i><a href="#" id="comments_a">(comments)</a></i></br>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
     
   

@@ -1,8 +1,42 @@
     <!-- push a new message into the array -->
     <form ng-submit="addMessage()">
+    <pre> {{ currentUser.facebook.cachedUserProfile |json }}</pre>
       <input ng-model="newMessage.title" placeholder="title" />
-      <input ng-model="newMessage.author" placeholder="author" />
+      <input ng-model="newMessage.author" />
       <!-- <input ng-model="newMessage.date" placeholder="date" /> -->
       <input ng-model="newMessage.text" placeholder="message" />
+    	<select ng-model="newMessage.tag1" placeholder="Tag1">
+      		<option ng-selected="selected" value="None">None</option>
+  			<option value="Economy">Economy</option>
+  			<option value="Politics">Politics</option>
+  			<option value="War">War</option>
+  			<option value="foreign Issues">foreign Issues</option>
+  			<option value="Good News">Good News</option>
+  			<option value="Bad News">Bad News</option>
+  			<option value="National News">National News</option>
+  			<option value="Local News">Local News</option>
+		</select>
+		<select ng-model="newMessage.tag2" placeholder="Tag2">
+      		<option ng-selected="selected" value="None">None</option>
+  			<option value="Economy">Economy</option>
+  			<option value="Politics">Politics</option>
+  			<option value="War">War</option>
+  			<option value="foreign Issues">foreign Issues</option>
+  			<option value="Good News">Good News</option>
+  			<option value="Bad News">Bad News</option>
+  			<option value="National News">National News</option>
+  			<option value="Local News">Local News</option>
+		</select>
+		<select ng-model="newMessage.tag3" placeholder="Tag3">
+      		<option ng-selected="selected" value="None">None</option>
+  			<option value="Economy">Economy</option>
+  			<option value="Politics">Politics</option>
+  			<option value="War">War</option>
+  			<option value="foreign Issues">foreign Issues</option>
+  			<option value="Good News">Good News</option>
+  			<option value="Bad News">Bad News</option>
+  			<option value="National News">National News</option>
+  			<option value="Local News">Local News</option>
+		</select>
       <button type="submit">add message</button>
     </form>
