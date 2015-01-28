@@ -10,15 +10,15 @@ body {
 
 #well1{
 	position: fixed;
-	width: 40%;
+	width: 38%;
 	top: 11%;
 	right: -1%;
 }
 
 #well3{
 	position: fixed;
-	bottom: 33%;
-	width:40%;
+	top: 29%;
+	width:38%;
 	right: -1%;
 }
 
@@ -90,4 +90,17 @@ ol{
 	margin-left: 10%;
 	margin-top: 12%;
 	border-right: 50%;
+}
+
+#nmessage{
+	margin-left: 35%;
+}
+
+.title{
+	width: 50%;
+}
+
+.text{
+	width: 50%;
+	height: 30%;
 }

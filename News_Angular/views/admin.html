@@ -1,12 +1,17 @@
+    <div ng-if="currentUser"><!-- displays if the user is logged in -->
     <ol>
       <li ng-repeat="message in messages | orderBy:reverse">
-        <!-- exit a message -->
+        <!-- users can edit all parts of any message. The message saves the changes automatically -->
         <input ng-model="message.title" ng-change="messages.$save(message)" />
         <input ng-model="message.author" ng-change="messages.$save(message)" />
         <input ng-model="message.date" ng-change="messages.$save(message)" />
-        <input ng-model="message.text" ng-change="messages.$save(message)" />
-        <!-- delete message -->
+        <input class="text" ng-model="message.text" ng-change="messages.$save(message)" />
+        <!-- Delete the message -->
         <button ng-click="messages.$remove(message)">X</button>
       </li>
     </ol>
+     </div>
+    <div ng-if="!currentUser"><!-- shows this if the user is not logged in -->
+    	<p>Please consider logging in with your Facebook to use this feature.</p>
+    </div>
     

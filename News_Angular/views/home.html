@@ -12,11 +12,8 @@
                     News Angular
                     <small>Write News Right Now</small>
                 </h1>
-                <img ng-src="{{currentUser.facebook.cachedUserProfile.picture.data.url}}" alt="user pic yo"/>
-                
-                <pre> {{ currentUser.facebook.cachedUserProfile |json }}</pre>
 
-                <!-- First Blog Post -->
+                <!-- Blog Post Loops through all the articles, orders it bottom up and makes it searchable -->
             <ol ng-repeat="message in messages | orderBy:reverse | filter:searchArc">
       			<li>
                 <h2>
@@ -32,14 +29,14 @@
                 <hr>
                 	Tags:</br>
                 	<a href="#">{{message.tag1}}</a> <a href="#/">{{message.tag2}}</a> <a href="#">{{message.tag3}}</a>
-                <!--<a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>-->
+                
             
                 <hr>
             	</li>
     		</ol>
             </div>
 
-            <!-- Blog Search Well -->
+            <!-- Blog Search -->
                 <div class="well" id="well1">
                     <h4>Article Search</h4>
                     <h6>Search tags, titles, authors and content</h6>
@@ -55,10 +52,15 @@
                 </div>
 
 
-                <!-- Side Widget Well -->
+                <!-- Displays new API news stories -->
                 <div class="well" id="well3">
                     <h4>Current News</h4>
-                    	<a href="#" id="article_a">article</a> <i><a href="#" id="comments_a">(comments)</a></i></br>
+                    	<table class="table table-striped">
+	
+			<div ng-repeat="news in mashable | limitTo: 3">
+				<h4><a ng-href="{{news.article_link}}"> {{news.article_title}}</a></h4>
+				<p>{{news.article_details}}</p>
+			</div>
                 </div>
 
             </div>
