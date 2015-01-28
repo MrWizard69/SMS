@@ -1,0 +1,23 @@
+{
+  "name": "angularnews",
+  "version": "0.0.0",
+  "authors": [
+    "Jordan WIlson <mrwizard6933@gmail.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularfire": "~0.8.2",
+    "angular-route": "~1.2.24"
+  }
+}
